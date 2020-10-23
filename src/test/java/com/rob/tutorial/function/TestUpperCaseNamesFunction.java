@@ -1,4 +1,4 @@
-package com.rob.tutorial;
+package com.rob.tutorial.function;
 
 import com.rob.tutorial.data.Customer;
 import com.rob.tutorial.data.CustomerKey;
