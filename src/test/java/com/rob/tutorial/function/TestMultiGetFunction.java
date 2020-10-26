@@ -69,7 +69,7 @@ public class TestMultiGetFunction {
 
     }
 
-    class MyArrayListResultsCollector extends ResultCollector {
+    class MyArrayListResultsCollector implements ResultCollector {
 
         @Override
         /**

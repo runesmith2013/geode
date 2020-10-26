@@ -26,9 +26,9 @@ import static org.junit.Assert.assertEquals;
  */
 public class TestGeodeClient {
 
-    private static ClientCache cache;
-    private static Region<String, String> region;
-    private static Region<CustomerKey, Customer> customerRegion;
+    public static ClientCache cache;
+    public static Region<String, String> region;
+    public static Region<CustomerKey, Customer> customerRegion;
 
 
     @BeforeClass
@@ -86,22 +86,7 @@ public class TestGeodeClient {
     }
     
 
-    @Test
-    public void testQueryCustomObjectsOQL() throws NameResolutionException, TypeMismatchException, QueryInvocationTargetException, FunctionDomainException {
-        Map<CustomerKey, Customer> data = new HashMap<>();
-        CustomerKey k1 = new CustomerKey(1, "UK");
-        CustomerKey k2 = new CustomerKey(2, "UK");
-        data.put(k1, new Customer(k1,"Gheorge", "Manuc", 36));
-        data.put(k2, new Customer(k2,"Allan", "McDowell", 43));
-        this.customerRegion.putAll(data);
 
-        QueryService queryService = this.cache.getQueryService();
-        String query =
-                "select * from /baeldung-customers c where c.firstName = 'Allan'";
-        SelectResults<Customer> results =
-                (SelectResults<Customer>) queryService.newQuery(query).execute();
-        assertEquals(1, results.size());
-    }
 
 
 

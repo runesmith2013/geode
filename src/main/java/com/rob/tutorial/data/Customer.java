@@ -12,6 +12,13 @@ public class Customer implements Serializable {
 
     private Integer age;
 
+    public Customer(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+
     public Customer(CustomerKey key, String firstName, String lastName, int age) {
         this.key = key;
         this.firstName = firstName;
